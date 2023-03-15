@@ -30,7 +30,7 @@ int main() {
 			int* RectangleSidesptr = getRectangleSides(RectangleSides);
 			char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
 			printf_s("%s\n", RectangleResult);
-			break;
+			break;     
 		case 0:
 			continueProgram = false;
 			break;

@@ -31,6 +31,7 @@ int main() {
 			char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
 			printf_s("%s\n", RectangleResult);
 			//hello
+
 			break;
 		case 0:
 			continueProgram = false;

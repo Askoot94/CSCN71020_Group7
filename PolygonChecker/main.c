@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-
+#include "triangleSolver.h"
 #include "main.h"
 #include "triangleSolver.h"
 
@@ -28,8 +28,8 @@ int main() {
 			printf_s("Rectangle Selected.\n");
 			int RectangleSides[4] = { 0,0,0,0 };
 			int* RectangleSidesptr = getRectangleSides(RectangleSides);
-			char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
-			printf_s("%s\n", RectangleResult);
+			//char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
+			//printf_s("%s\n", RectangleResult);
 
 			break;
 		case 0:
@@ -52,6 +52,7 @@ void printWelcome() {
 }
 
 int printShapeMenu() {
+	printf_s("2. Rectangle\n");
 	printf_s("1. Triangle\n");
 	printf_s("0. Exit\n");
 
@@ -71,12 +72,22 @@ int* getTriangleSides(int* triangleSides) {
 	}
 	return triangleSides;
 }
-int* getRectangle(int* rectangleSides)
+int* getRectangleSides(int* rectangleSides)
 {
-	printf_s("Enter the three sides of the triangle: ");
+	int xValue[4] = { 0,0,0,0 };
+	int yValue[4] = { 0,0,0,0 };
+
+	printf_s("Enter the four sides of the rectangle:\n");
 	for (int i = 0; i < 4; i++)
 	{
-		scanf_s("%d", &rectangleSides[i]);
+		printf_s("Enter the X value:\n");
+		scanf_s("%d", &xValue[i]);
+
+		printf_s("Enter the Y value:\n");
+		scanf_s("%d", &yValue[i]);
+
+		printf_s("(%d , %d)\n", xValue[i], yValue[i]);
+		
 	}
-	return rectangleSides;
+	return rectangleSides;	
 }

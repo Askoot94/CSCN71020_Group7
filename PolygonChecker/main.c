@@ -23,6 +23,15 @@ int main() {
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
 			printf_s("%s\n", result);
 			break;
+
+		case 2:
+			printf_s("Rectangle Selected.\n");
+			int RectangleSides[4] = { 0,0,0,0 };
+			int* RectangleSidesptr = getRectangleSides(RectangleSides);
+			char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
+			printf_s("%s\n", RectangleResult);
+
+			break;
 		case 0:
 			continueProgram = false;
 			break;

@@ -30,7 +30,6 @@ int main() {
 			int* RectangleSidesptr = getRectangleSides(RectangleSides);
 			char* RectangleResult = analyzeRectangle(RectangleSidesptr[0], RectangleSidesptr[1], RectangleSidesptr[2], RectangleSidesptr[3]);
 			printf_s("%s\n", RectangleResult);
-			//hello
 
 			break;
 		case 0:
@@ -71,4 +70,13 @@ int* getTriangleSides(int* triangleSides) {
 		scanf_s("%d", &triangleSides[i]);
 	}
 	return triangleSides;
+}
+int* getRectangle(int* rectangleSides)
+{
+	printf_s("Enter the three sides of the triangle: ");
+	for (int i = 0; i < 4; i++)
+	{
+		scanf_s("%d", &rectangleSides[i]);
+	}
+	return rectangleSides;
 }

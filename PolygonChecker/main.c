@@ -11,7 +11,14 @@ int main(){
     while (continueProgram) {
         printWelcome();
 
-        int shapeChoice = printShapeMenu();
+        char shapeChoice = printShapeMenu();
+        do
+        {
+            printf_s("diffrent value expect:\n");
+            shapeChoice = scanf_s("%d", &shapeChoice);
+            int buf;
+            while ((buf = getchar()) != '\n' && buf != EOF);
+        } while (shapeChoice!= 1);
 
         switch (shapeChoice)
         {

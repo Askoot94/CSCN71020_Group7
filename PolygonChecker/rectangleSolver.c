@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-char* analyzeRectangle(int *xValue, int *yValue) {
+char* analyzeRectangle(int *xValue, int *yValue, int rectangleSides[]) {
 	char* result = "";
 	//Store Lengths of each side in their own variables
 	int topLength = abs(xValue[0] - xValue[1]);
@@ -13,8 +13,9 @@ char* analyzeRectangle(int *xValue, int *yValue) {
 	int rightLength = abs(yValue[1] - yValue[2]);
 
 	//Check that topLength and botLength as well as leftLength and rightLength are equal
-	if (topLength == botLength && leftLength == rightLength && topLength == rightLength)
+	if (topLength == botLength && leftLength == rightLength && topLength == rightLength) {
 		result = "Square";
+	}
 	else if (topLength == botLength && leftLength == rightLength)
 		result = "Rectangle";
 	else

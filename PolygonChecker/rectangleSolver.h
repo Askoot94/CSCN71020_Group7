@@ -1,3 +1,3 @@
 #pragma once
 
-char* analyzeRectangle(int*, int*);
+char* analyzeRectangle(int*, int*, int[]);

@@ -35,7 +35,11 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 	printf("\narea :  %d units\n",GetRectangleArea(topLength, botLength, leftLength, rightLength));
 	result = "\nRectangle\n\n";
 }
+	else
+		result = "Not a Rectangle";
 
+		return result;
+}
 	
 
 int GetRectangleArea(int topLength, int bothLength, int leftLength, int rightLength)

@@ -5,7 +5,6 @@
 #include "rectangleSolver.h"
 #include "GetTriangleAngle.h"
 
-int side = 0;
 
 
 int main(){

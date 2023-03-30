@@ -5,6 +5,7 @@
 #include "GetTriangleAngle.h"
 int side = 0;
 
+
 int main(){
     bool continueProgram = true;
     while (continueProgram) {

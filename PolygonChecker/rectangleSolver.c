@@ -16,11 +16,9 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 	//Check that topLength and botLength as well as leftLength and rightLength are equal
 	if (topLength == botLength && leftLength == rightLength && topLength == rightLength) {
 
-		
-
 		// Multiply top and left lengths to get the area of the square
-		int area = topLength * leftLength;
-		result = printf("\nThe area of the square is: %d\n", area);
+		int area = GetRectangleArea(topLength, rightLength);
+		printf("\nThe area of the square is: %d\n", area);
 
 	}
 	else if (topLength ==rightLength) {

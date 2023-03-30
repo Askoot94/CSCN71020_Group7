@@ -21,22 +21,18 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 
 		// Get user input for top and left lengths
 		printf("Enter the top length of the square: ");
-		scanf_s("%d",  &topLength);
+		scanf_s("%d", &topLength);
 		printf("Enter the left length of the square: ");
-		scanf_s("%d",  &leftLength);
+		scanf_s("%d", &leftLength);
 
 		// Multiply top and left lengths to get the area of the square
 		area = topLength * leftLength;
-		printf()
-		result = printf("The area of the square is: %d\n", area);
+		result = printf("\nThe area of the square is: %d\n", area);
 
 	}
-	else if (topLength == botLength && leftLength == rightLength)
-
+	else if (topLength == botLength && leftLength == rightLength);
+	printf("\nThe area of rectangle with sides %d and %d", topLength, leftLength);
 		result = "Rectangle";
-	else {
-		result = "Not a Rectangle";
-	     }
 
 	return result;
 

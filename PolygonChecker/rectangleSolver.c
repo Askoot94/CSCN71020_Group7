@@ -27,7 +27,7 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 
 		// Multiply top and left lengths to get the area of the square
 		area = topLength * leftLength;
-
+		printf()
 		result = printf("The area of the square is: %d\n", area);
 
 	}
@@ -41,4 +41,16 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 	return result;
 
 	return 0;
+}
+int GetRectanglArea(int topLength, int bothLength, int leftLength, int rightLength)
+{
+	int area = 0;
+
+	int length_1 = topLength * bothLength;
+	int length_2 = leftLength * rightLength;
+
+	area = length_1 * length_2;
+
+	return area;
+
 }

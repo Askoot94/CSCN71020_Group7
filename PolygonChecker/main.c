@@ -17,7 +17,7 @@ int main() {
 			printf_s("Triangle selected.\n");
 			int triangleSides[3] = { 0, 0, 0 };
 			int* triangleSidesPtr = getTriangleSides(triangleSides);
-			double triangleAngles[3] = {0,0,0};
+			double triangleAngles[3] = { 0 ,0 ,0 };
 			double* triangleAnglesPtr = getTriangleAngles(triangleSides, triangleAngles);
 			//printf_s("! %d\n", triangleSidesPtr[0]);
 			char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);

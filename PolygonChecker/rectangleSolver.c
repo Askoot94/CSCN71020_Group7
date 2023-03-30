@@ -30,17 +30,17 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 		result = printf("\nThe area of the square is: %d\n", area);
 
 	}
-	else if (topLength == botLength && leftLength == rightLength);
-	printf("\nThe area of rectangle with sides %d and %d", topLength, leftLength);
-	printf("\narea :  %d units\n",GetRectangleArea(topLength, botLength, leftLength, rightLength));
-	result = "\nRectangle\n\n";
-}
-	else
+	else if (topLength == botLength && leftLength == rightLength) {
+		printf("\nThe area of rectangle with sides %d and %d", topLength, leftLength);
+		printf("\narea :  %d units\n", GetRectangleArea(topLength, botLength, leftLength, rightLength));
+		result = "\nRectangle\n\n";
+	}
+
+	else 
 		result = "Not a Rectangle";
 
 		return result;
 }
-	
 
 int GetRectangleArea(int topLength, int bothLength, int leftLength, int rightLength)
 {

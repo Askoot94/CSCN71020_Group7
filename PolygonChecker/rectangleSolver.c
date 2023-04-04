@@ -15,16 +15,16 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 
 	//Check that topLength and botLength as well as leftLength and rightLength are equal
 	if (topLength == botLength && leftLength == rightLength && topLength == rightLength) {
-		printf("\nA square with side lengths of %d units has", topLength);
-    printf("\nArea: %d units\n", GetRectangleArea(topLength, rightLength));
-    printf("\nPerimeter : %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
+		printf("\nA polygon with 4 side lengths of %d units has\n", topLength);
+		printf("Area: %d units\n", GetRectangleArea(topLength, rightLength));
+		printf("Perimeter : %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
 		result = "\nSquare\n\n";
 
 	}
 	else if (topLength == botLength && leftLength == rightLength) {
-		printf("\nA rectangle with sides %d units and %d units has", topLength,rightLength);
-		printf("\nArea:  %d units\n", GetRectangleArea(topLength, rightLength));
-    printf("\nPerimeter :  %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
+		printf("\nA polygon with 4 sides, 2 measuring %d units and the other 2 measuring %d units has\n", topLength,rightLength);
+		printf("Area:  %d units\n", GetRectangleArea(topLength, rightLength));
+		printf("Perimeter :  %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
 		result  = "\nRectangle\n\n";
 	}
 	else 

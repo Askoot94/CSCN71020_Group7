@@ -4,3 +4,5 @@ void printWelcome();
 void printShapeMenu();
 int* getTriangleSides(int* triangleSides);
 char GetUserNumber();
+void getRectangleSides(int[]);
+double* getTriangleAngles(int* triangleSides, double* triangleAngles);

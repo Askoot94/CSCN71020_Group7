@@ -11,11 +11,11 @@ int main(){
     bool continueProgram = true;
     while (continueProgram) {
         printWelcome();
-
-		int shapeChoice = printShapeMenu();
+        printShapeMenu();
+        int shapeChoice = GetUserNumber();
         switch (shapeChoice)
         {
-        case 1:
+        case '1':
             printf_s("Triangle selected.\n");
             int triangleSides[3] = { 0, 0, 0 };
             int* triangleSidesPtr = getTriangleSides(triangleSides);
@@ -35,7 +35,7 @@ int main(){
             continueProgram = false;
             break;
         default:
-            printf_s("Invalid value entered.\n");
+            printf_s("Invalid option selected.\n");
             break;
         }
     }
@@ -51,17 +51,12 @@ void printWelcome() {
 	printf_s(" **********************\n");
 }
 
-int printShapeMenu() {
+
+void printShapeMenu() {
 	printf_s("2. Rectangle\n");
 	printf_s("1. Triangle\n");
 	printf_s("0. Exit\n");
-
-	int shapeChoice;
-
-	printf_s("Enter number: ");
-	scanf_s("%1o", &shapeChoice);
-
-	return shapeChoice;
+	return;
 }
 
 int* getTriangleSides(int* triangleSides) {
@@ -73,6 +68,25 @@ int* getTriangleSides(int* triangleSides) {
 	return triangleSides;
 }
 
+char GetUserNumber() {
+    char input;
+    printf_s("Enter number: \n");
+    bool flag;
+    do {
+        input = getchar();
+        if (input == EOF) {
+            printf_s("Please Enter a number: \n");
+            flag = false;
+        }
+        else if (input == NewLine) {
+            flag = false;
+        }
+        else
+            flag = true;
+    } while (flag == false);
+
+    return input;
+}
 
 void getRectangleSides(int rectangleSides[]) {
 	int xValue[4] = { 0,0,0,0 };

@@ -26,12 +26,12 @@ int main(){
             printf_s("%s\n", result);
             printf("%lf, %lf, %lf\n", triangleAnglesPtr[0], triangleAnglesPtr[1], triangleAnglesPtr[2]);
             break;
-        case 2:
+        case '2':
 			      printf_s("Rectangle Selected.\n");
 			      int RectangleSides[4] = { 0,0,0,0 };
 			      getRectangleSides(RectangleSides);
 			      break;
-        case 0:
+        case '0':
             continueProgram = false;
             break;
         default:

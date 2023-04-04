@@ -16,33 +16,24 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 	//Check that topLength and botLength as well as leftLength and rightLength are equal
 	if (topLength == botLength && leftLength == rightLength && topLength == rightLength) {
 
-		// Multiply top and left lengths to get the area of the square
-		int area = GetRectangleArea(topLength, rightLength);
-		printf("\nThe area of the square is: %d\n", area);
+		printf("\nThe area of the square is: %d\n", GetRectangleArea(topLength, rightLength));
+		result = "\nSquare\n\n";
 
 	}
-	else if (topLength ==rightLength) {
-		printf("\nThe area of rectangle with sides %d and %d", topLength,rightLength);
-		printf("\narea :  %d units\n", GetRectangleArea(topLength, rightLength));
-		int area = topLength *rightLength;
-		result = printf("\nThe area of the rectangle is: %d\n", area);
-		area  = "\nRectangle\n\n";
+	else if (topLength == botLength && leftLength == rightLength) {
+		printf("\nThe area of rectangle with sides %d units and %d units", topLength,rightLength);
+		printf("\nArea :  %d units\n", GetRectangleArea(topLength, rightLength));
+		result  = "\nRectangle\n\n";
 	}
-
 	else 
 		result = "Not a Rectangle";
 
-		return result;
+	return result;
 }
 
 int GetRectangleArea(int topLength,  int rightLength)
 {
-	int area = 0;
-
-	int length_1 = topLength * rightLength;
-
-	area = topLength * rightLength;
+	int area = topLength * rightLength;
 
 	return area;
-
 }

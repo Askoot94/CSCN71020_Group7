@@ -27,8 +27,11 @@ char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 		printf("Perimeter :  %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
 		result  = "\nRectangle\n\n";
 	}
-	else 
+	else {
+		printf("\nA polygon with 4 sides, measuring %d units, %d units, %d units, and %d units has\n", topLength, botLength, leftLength, rightLength);
+		printf("Perimeter :  %d units\n", GetRectanglePerimeter(topLength, botLength, leftLength, rightLength));
 		result = "Not a Rectangle";
+	}
 
 	return result;
 }

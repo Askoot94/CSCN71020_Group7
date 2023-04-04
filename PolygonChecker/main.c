@@ -90,5 +90,5 @@ void getRectangleSides(int rectangleSides[]) {
 
 	}
 	//Use the rectangle points to determine the sides.
-	printf("%s", analyzeRectangle(&xValue, &yValue, rectangleSides)); //Will print rectangle type
+	printf("%s", analyzeRectangle(xValue, yValue, rectangleSides)); //Will print rectangle type
 }

@@ -3,17 +3,14 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-extern "C" char* analyzeTriangle(int side1, int side2, int side3);
-
-namespace Group7CollectiveTestSuite
+namespace UnitTesting
 {
-	TEST_CLASS(Group7CollectiveTestSuite)
+	TEST_CLASS(UnitTesting)
 	{
 	public:
 		
 		TEST_METHOD(TestMethod1)
 		{
-			
 		}
 	};
 }

@@ -55,9 +55,9 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(don)
 		{
-
+			//Test
 		}
 	};
 }

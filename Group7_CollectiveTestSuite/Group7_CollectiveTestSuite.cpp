@@ -51,4 +51,13 @@ namespace Group7CollectiveTestSuite
 
 		}
 	};
+	TEST_CLASS(DonalTestSuite)
+	{
+	public:
+
+		TEST_METHOD(TestMethod1)
+		{
+
+		}
+	};
 }

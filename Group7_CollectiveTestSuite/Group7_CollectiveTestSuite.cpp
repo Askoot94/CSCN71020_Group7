@@ -57,7 +57,7 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(don)
 		{
-			//Test
+		
 		}
 	};
 }

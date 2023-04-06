@@ -3,8 +3,8 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
-extern "C" int GetRectangleArea(int, int);
-extern "C" int GetRectanglePerimeter(int, int, int, int);
+extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
+extern "C" int GetRectangleArea(int topLength, int leftLength);
 
 namespace Group7CollectiveTestSuite
 {
@@ -88,30 +88,10 @@ namespace Group7CollectiveTestSuite
 			int topLength = 2;
 			int leftLength = 4;
 
-			int result1 = GetRectangleArea(topLength, leftLength);
-			Assert::AreEqual(8, result1);
-		}
-		TEST_METHOD(Rectangle_Area_2)
-		{
-			
-			int topLength = 6;
-			int rightLength = 4;
-
-			int result2 = GetRectangleArea(topLength, rightLength);
-			Assert::AreEqual(35, result2);
-		}
-
-		TEST_METHOD(Rectangle_Area_3)
-		{
-			
-			int topLength = 8;
-			int rightLength = 1;
-
-			int result3 = GetRectangleArea(topLength, rightLength);
-			Assert::AreNotEqual(2, result3);
+			int result = GetRectangleArea(topLength, leftLength);
+			Assert::AreEqual(8, result);
 		}
 	};
-
 	TEST_CLASS(DonaldTestSuite)
 	{
 	public:

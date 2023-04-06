@@ -53,8 +53,6 @@ namespace Group7CollectiveTestSuite
 			{
 				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]); // Compare individual elements
 			}
-
-
 		}
 	};
 	TEST_CLASS(JayTestSuite)

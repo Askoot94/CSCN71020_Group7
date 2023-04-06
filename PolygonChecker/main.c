@@ -103,6 +103,13 @@ void getRectangleSides(int rectangleSides[]) {
 		printf_s("(%d , %d)\n", xValue[i], yValue[i]);
 
 	}
+    //Store Lengths of each side in their own variables
+    int topLength = abs(xValue[0] - xValue[1]);
+    int botLength = abs(xValue[2] - xValue[3]);
+
+    int leftLength = abs(yValue[0] - yValue[3]);
+    int rightLength = abs(yValue[1] - yValue[2]);
+    
 	//Use the rectangle points to determine the sides.
-	printf("%s", analyzeRectangle(xValue, yValue, rectangleSides)); //Will print rectangle type
+	printf("%s", analyzeRectangle(rectangleSides)); //Will print rectangle type
 }

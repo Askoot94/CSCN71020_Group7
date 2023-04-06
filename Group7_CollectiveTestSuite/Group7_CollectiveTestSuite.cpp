@@ -4,14 +4,14 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
-
+extern "C" char* analyzeTriangle(int side1, int side2, int side3)
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestMethod1)  
 		{
 			
 		}

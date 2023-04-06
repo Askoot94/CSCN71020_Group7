@@ -20,8 +20,12 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(Triangle_Angle_1)
 		{
+			int result = 0;
+			int side1 = 2;
+			int side2 = 4;
+			int side3 = 3;
 
 		}
 	};

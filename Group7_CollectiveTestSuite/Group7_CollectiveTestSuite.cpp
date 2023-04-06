@@ -1,8 +1,13 @@
 #include "pch.h"
 #include "CppUnitTest.h"
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
+
+extern "C" void getRectangleSides(int rectangleSides[]);
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+
 
 namespace Group7CollectiveTestSuite
 {
@@ -37,8 +42,18 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(getRectangleSides_Functionality)
 		{
+			int rectangleSides[4] = { 1, 6, 4, 0 };
+			int expectedRectangleSides[4] = { 1, 6, 4, 0 };
+
+			getRectangleSides(rectangleSides); // Call the function
+
+			for (int i = 0; i < 4; i++)
+			{
+				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]); // Compare individual elements
+			}
+
 
 		}
 	};

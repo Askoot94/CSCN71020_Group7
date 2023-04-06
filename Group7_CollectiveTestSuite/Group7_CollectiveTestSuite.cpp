@@ -147,7 +147,7 @@ namespace Group7CollectiveTestSuite
 	TEST_CLASS(DonalDTestSuite)
 	{
 	public:
-
+		// created a test case for don1 and its successfully running
 		TEST_METHOD(don1)
 		{
 			char* expected = "Scalene triangle";
@@ -159,6 +159,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(expected, result);
 
 		}
+		// created a test case for don2 and its successfully running
 		TEST_METHOD(don2)
 		{
 			char* expected = "Isosceles triangle";
@@ -169,7 +170,7 @@ namespace Group7CollectiveTestSuite
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual(expected, result);
 		}
-
+		// created a test case for don3 and its successfully running
 		TEST_METHOD(don3)
 		{
 			char* expected = "Equilateral triangle";
@@ -180,6 +181,7 @@ namespace Group7CollectiveTestSuite
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual(expected, result);
 		}
+		// created a fail test case for don4 and its successfully running
 		TEST_METHOD(don4)
 		{
 			char* expected = "Isosceles triangle";
@@ -190,6 +192,7 @@ namespace Group7CollectiveTestSuite
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreNotEqual(expected, result);
 		}
+		
 	};
 }
 

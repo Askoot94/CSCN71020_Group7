@@ -5,7 +5,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
 extern "C" char* analyzeRectangle(int[]);
-extern "C" void getRectangleSides(int rectangleSides[]);
+extern "C" void getRectangleSides(int*);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
 

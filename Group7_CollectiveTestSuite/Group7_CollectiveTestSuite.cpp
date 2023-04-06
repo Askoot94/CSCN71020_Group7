@@ -1,19 +1,50 @@
-                                                                                                          #include "pch.h"
+#include "pch.h"
 #include "CppUnitTest.h"
 
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
+extern "C" char* analyzeRectangle(int*, int*, int[]);
+extern "C" char GetUserNumber();
+
+extern "C" void getRectangleSides(int rectangleSides[]);
+
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
+
+
+
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
+extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)
 	{
 	public:
-		
-		TEST_METHOD(TestMethod1)  
+		TEST_METHOD(ShapeIdentification1)
 		{
-			
+			//Checking the Function can Identify Squares
+			char* expected = "\nSquare\n\n";
+			int xValue[4] = { 0,4,0,4 };
+			int yValue[4] = { 4,4,0,0 };
+			char* result = analyzeRectangle(xValue, yValue, NULL);
+			Assert::AreEqual(expected, result);
+		}
+		TEST_METHOD(ShapeIdentification2)
+		{
+			//Checking the Function can Identify Rectangles
+			char* expected = "\nRectangle\n\n";
+			int xValue[4] = { 0,4,0,4 };
+			int yValue[4] = { 3,3,0,0 };
+			char* result = analyzeRectangle(xValue, yValue, NULL);
+			Assert::AreEqual(expected, result);
+		}
+		TEST_METHOD(ShapeIdentification3)
+		{
+			//Checking the Function can Identify  given points is not a Rectangle or Square
+			char* expected = "Not a Rectangle";
+			int xValue[4] = { 0,4,0,4 };
+			int yValue[4] = { 3,3,1,0 };
+			char* result = analyzeRectangle(xValue, yValue, NULL);
+			Assert::AreEqual(expected, result);
 		}
 	};
 	TEST_CLASS(YinusTestSuite)
@@ -22,10 +53,13 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
-			int result = 0;
-			int side1 = 2;
-			int side2 = 4;
-			int side3 = 3;
+			int triangleSides[3] = { 3, 4, 5 };
+			double triangleAngles[3];
+			getTriangleAngles(triangleSides, triangleAngles);
+			Assert::AreEqual(90.0, triangleAngles[0], 1e-6);
+			Assert::AreEqual(36.8699, triangleAngles[1], 1e-4);
+			Assert::AreEqual(53.1301, triangleAngles[2], 1e-4);
+
 
 		}
 	};
@@ -73,9 +107,17 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(getRectangleSides_Functionality)
 		{
+			int rectangleSides[4] = { 1, 6, 4, 0 };
+			int expectedRectangleSides[4] = { 1, 6, 4, 0 };
 
+			getRectangleSides(rectangleSides); // Call the function
+
+			for (int i = 0; i < 4; i++)
+			{
+				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]); // Compare individual elements
+			}
 		}
 	};
 	TEST_CLASS(JayTestSuite)

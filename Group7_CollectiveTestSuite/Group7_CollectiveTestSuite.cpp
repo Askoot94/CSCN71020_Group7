@@ -135,14 +135,13 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(don)
 		{
-			int result = 0;
-			int topLength = 4;
-			int leftLength = 2;
-			int botLength = 1;
-			int rightLength = 3;
+			char* expected = "Scalene triangle";
+			int side1 = 2;
+			int side2 = 3;
+			int side3 = 1;
 
-			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
-			Assert::AreEqual(15, result);
+			char* result = analyzeTriangle( side1, side2, side3);
+			Assert::AreEqual(expected, result);
 			 
 			 
 			 

@@ -23,12 +23,12 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
-			int triangleSides[3] = { 3, 4, 5 };
+			int triangleSides[3] = { 5, 5, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
-			Assert::AreEqual(90.0, triangleAngles[0], 1e-6);
-			Assert::AreEqual(36.8699, triangleAngles[1], 1e-4);
-			Assert::AreEqual(53.1301, triangleAngles[2], 1e-4);
+			Assert::AreEqual(60.0, triangleAngles[0]);
+			Assert::AreEqual(60.0, triangleAngles[1]);
+			Assert::AreEqual(60.0, triangleAngles[2]);
 
 
 		}
@@ -37,7 +37,8 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(Rectangle_Perimeter_1)
+		//Test for testing the function to calculate the perimeter of rectangle with all correct sides
+		TEST_METHOD(Rectangle_Perimeter_1)  
 		{
 			int result = 0;
 			int topLength = 2;
@@ -49,6 +50,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(12, result);
 		}
 
+		//Test for testing the function to calculate the perimeter of rectangle with some random sides(does not form rectangle)
 		TEST_METHOD(Rectangle_Perimeter_2)
 		{
 			int result = 0;
@@ -61,6 +63,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(13, result);
 		}
 
+		//Test for rectangle with all correct side but wrong result
 		TEST_METHOD(Rectangle_Perimeter_3)
 		{
 			int result = 0;

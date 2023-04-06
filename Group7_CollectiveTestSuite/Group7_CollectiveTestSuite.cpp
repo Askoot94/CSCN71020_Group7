@@ -78,6 +78,7 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
+		//test for rectangle with all correct sides 
 		TEST_METHOD(Rectangle_Perimeter_1)
 		{
 			int result = 0;
@@ -90,6 +91,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(12, result);
 		}
 
+		//test for rectangle with wrong sides
 		TEST_METHOD(Rectangle_Perimeter_2)
 		{
 			int result = 0;
@@ -102,6 +104,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(13, result);
 		}
 
+		//test for rectangle with correct side but with rong result
 		TEST_METHOD(Rectangle_Perimeter_3)
 		{
 			int result = 0;

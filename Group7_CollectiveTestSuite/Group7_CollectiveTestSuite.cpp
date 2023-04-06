@@ -1,19 +1,15 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
 extern "C" char* analyzeRectangle(int*, int*, int[]);
-extern "C" char GetUserNumber();
-
 extern "C" void getRectangleSides(int rectangleSides[]);
-
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
-
-
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
+
+
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)

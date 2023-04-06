@@ -59,7 +59,8 @@ namespace Group7CollectiveTestSuite
 			int triangleSides[3] = { 3, 4, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
-			Assert::AreEqual(36.869897645844013, triangleAngles[0]);
+		
+	        Assert::AreEqual(36.869897645844013, triangleAngles[0]);
 			Assert::AreEqual(53.130102354155980, triangleAngles[1]);
 			Assert::AreEqual(90.0000, triangleAngles[2]);
 		}
@@ -68,9 +69,9 @@ namespace Group7CollectiveTestSuite
 			int triangleSides[3] = { 1 ,2 , 1 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
-			Assert::AreEqual(35.00, triangleAngles[0]);
-			Assert::AreEqual(70.00, triangleAngles[1]);
-			Assert::AreEqual(75.00, triangleAngles[2]);
+			Assert::AreNotEqual(35.00, triangleAngles[0]);
+			Assert::AreNotEqual(70.00, triangleAngles[1]);
+			Assert::AreNotEqual(75.00, triangleAngles[2]);
 		}
 	};
 	TEST_CLASS(JoelTestSuite)

@@ -133,7 +133,7 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(don)
+		TEST_METHOD(don1)
 		{
 			char* expected = "Scalene triangle";
 			int side1 = 2;
@@ -142,9 +142,29 @@ namespace Group7CollectiveTestSuite
 
 			char* result = analyzeTriangle( side1, side2, side3);
 			Assert::AreEqual(expected, result);
-			 
-			 
-			 
+			
 		}
+		TEST_METHOD(don2)
+		{
+			char* expected = "isosceles traingle";
+			int side2 = 2;
+			int side1 = 2;
+			int side3 = 1;
+
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+
+
+
+
+
+
+
+		}
+
+
+
+
+
 	};
 }

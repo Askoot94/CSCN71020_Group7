@@ -145,13 +145,23 @@ namespace Group7CollectiveTestSuite
          
 		}
 	};
-	TEST_CLASS(DonalTestSuite)
+	TEST_CLASS(DonalDTestSuite)
 	{
 	public:
 
 		TEST_METHOD(don)
 		{
-		
+			int result = 0;
+			int topLength = 4;
+			int leftLength = 2;
+			int botLength = 1;
+			int rightLength = 3;
+
+			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
+			Assert::AreEqual(15, result);
+			 
+			 
+			 
 		}
 	};
 }

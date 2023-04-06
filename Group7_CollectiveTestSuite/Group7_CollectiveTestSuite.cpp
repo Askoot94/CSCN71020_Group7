@@ -4,7 +4,8 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
-extern "C" char* analyzeTriangle(int side1, int side2, int side3)
+extern "C" char* analyzeTriangle(int side1, int side2, int side3);
+extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)
@@ -22,10 +23,13 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
-			int result = 0;
-			int side1 = 2;
-			int side2 = 4;
-			int side3 = 3;
+			int triangleSides[3] = { 3, 4, 5 };
+			double triangleAngles[3];
+			getTriangleAngles(triangleSides, triangleAngles);
+			Assert::AreEqual(90.0, triangleAngles[0], 1e-6);
+			Assert::AreEqual(36.8699, triangleAngles[1], 1e-4);
+			Assert::AreEqual(53.1301, triangleAngles[2], 1e-4);
+
 
 		}
 	};

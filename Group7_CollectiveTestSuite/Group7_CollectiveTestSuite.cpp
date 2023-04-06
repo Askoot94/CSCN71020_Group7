@@ -103,7 +103,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(13, result);
 		}
 
-		//test for rectangle with correct side but with rong result
+		//test for rectangle with correct side but with wrong result
 		TEST_METHOD(Rectangle_Perimeter_3)
 		{
 			int result = 0;

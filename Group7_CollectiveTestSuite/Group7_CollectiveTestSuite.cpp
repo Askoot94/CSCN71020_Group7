@@ -48,7 +48,7 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(TestMethod1)
 		{
-
+         
 		}
 	};
 }

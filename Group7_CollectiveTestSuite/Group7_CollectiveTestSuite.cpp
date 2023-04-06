@@ -91,7 +91,7 @@ namespace Group7CollectiveTestSuite
 			int leftLength = 4;
 			int rightLength = 4;
 
-			result = GetRectanglePerimeter(topLength, botLength, leftLength,rightLength);
+			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
 			Assert::AreEqual(12, result);
 		}
 
@@ -142,7 +142,7 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(TestMethod1)
 		{
-         
+
 		}
 	};
 	TEST_CLASS(DonalDTestSuite)
@@ -156,31 +156,63 @@ namespace Group7CollectiveTestSuite
 			int side2 = 3;
 			int side3 = 1;
 
-			char* result = analyzeTriangle( side1, side2, side3);
-			Assert::AreEqual(expected, result);
-			
-		}
-		TEST_METHOD(don2)
-		{
-			char* expected = "isosceles traingle";
-			int side2 = 2;
-			int side1 = 2;
-			int side3 = 1;
-
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual(expected, result);
 
+		}
+		TEST_METHOD(don2)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 3;
 
-
-
-
-
-
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
 		}
 
+		TEST_METHOD(don3)
+		{
+			char* expected = "Equilateral triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 2;
 
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+		}
+		TEST_METHOD(don4)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 3;
+			int side3 = 4;
 
-
-
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreNotEqual(expected, result);
+		}
 	};
 }
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+		
+
+
+
+
+
+	
+

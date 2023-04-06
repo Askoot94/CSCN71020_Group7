@@ -4,6 +4,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+
 char* analyzeRectangle(int* xValue, int* yValue, int rectangleSides[]) {
 	char* result = "";
 	//Store Lengths of each side in their own variables
@@ -54,3 +56,4 @@ int GetRectanglePerimeter(int topLength,int botLength, int leftLength, int right
 	return perimeter;
 
 }
+

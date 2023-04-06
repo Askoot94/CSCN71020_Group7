@@ -19,7 +19,7 @@ int main(){
             printf_s("Triangle selected.\n");
             int triangleSides[3] = { 0, 0, 0 };
             int* triangleSidesPtr = getTriangleSides(triangleSides);
-            double triangleAngles[3] = {0,0,0};
+            double triangleAngles[3] = { 0,0,0 };
             double* triangleAnglesPtr = getTriangleAngles(triangleSides, triangleAngles);
             //printf_s("! %d\n", triangleSidesPtr[0]);
             char* result = analyzeTriangle(triangleSidesPtr[0], triangleSidesPtr[1], triangleSidesPtr[2]);
@@ -27,10 +27,11 @@ int main(){
             printf("%lf, %lf, %lf\n", triangleAnglesPtr[0], triangleAnglesPtr[1], triangleAnglesPtr[2]);
             break;
         case '2':
-			      printf_s("Rectangle Selected.\n");
-			      int RectangleSides[4] = { 0,0,0,0 };
-			      getRectangleSides(RectangleSides);
-			      break;
+            printf_s("Rectangle Selected.\n");
+            int RectangleSides[4] = { 0,0,0,0 };
+            getRectangleSides(&RectangleSides);
+            printf("%s", analyzeRectangle(RectangleSides)); //Will print rectangle type
+            break;
         case '0':
             continueProgram = false;
             break;
@@ -88,28 +89,33 @@ char GetUserNumber() {
     return input;
 }
 
-void getRectangleSides(int rectangleSides[]) {
-	int xValue[4] = { 0,0,0,0 };
-	int yValue[4] = { 0,0,0,0 };
-	printf_s("Enter the four points of the rectangle:\n");
-	for (int i = 0; i < 4; i++)
-	{
-		printf_s("Enter the X value:\n");
-		scanf_s("%d", &xValue[i]);
+void getRectangleSides(int* rectangleSides)
+{
 
-		printf_s("Enter the Y value:\n");
-		scanf_s("%d", &yValue[i]);
+    int xValue[4] = { 0,0,0,0 };
+    int yValue[4] = { 0,0,0,0 };
+    printf_s("Enter the four points of the rectangle:\n");
+    for (int i = 0; i < 4; i++)
+    {
+        printf_s("Enter the X value:\n");
+        scanf_s("%d", &xValue[i]);
 
-		printf_s("(%d , %d)\n", xValue[i], yValue[i]);
+        printf_s("Enter the Y value:\n");
+        scanf_s("%d", &yValue[i]);
 
-	}
+        printf_s("(%d , %d)\n", xValue[i], yValue[i]);
+
+    }
     //Store Lengths of each side in their own variables
     int topLength = abs(xValue[0] - xValue[1]);
     int botLength = abs(xValue[2] - xValue[3]);
 
     int leftLength = abs(yValue[0] - yValue[3]);
     int rightLength = abs(yValue[1] - yValue[2]);
-    
-	//Use the rectangle points to determine the sides.
-	printf("%s", analyzeRectangle(rectangleSides)); //Will print rectangle type
+
+    *(rectangleSides) = topLength;
+    *(rectangleSides + 1) = botLength;
+    *(rectangleSides + 2) = leftLength;
+    *(rectangleSides + 3) = rightLength;
 }
+    //Use the rectangle points to determine the sides.

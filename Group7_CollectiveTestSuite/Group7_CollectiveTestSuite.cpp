@@ -55,6 +55,7 @@ namespace Group7CollectiveTestSuite
 		}
 		TEST_METHOD(Triangle_Angle_2)
 		{
+
 			int triangleSides[3] = { 3, 4, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);

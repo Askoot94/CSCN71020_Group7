@@ -4,7 +4,7 @@
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
-extern "C" char* analyzeTriangle(int side1, int side2, int side3)
+extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)
@@ -87,13 +87,23 @@ namespace Group7CollectiveTestSuite
          
 		}
 	};
-	TEST_CLASS(DonalTestSuite)
+	TEST_CLASS(DonalDTestSuite)
 	{
 	public:
 
 		TEST_METHOD(don)
 		{
-		
+			int result = 0;
+			int topLength = 4;
+			int leftLength = 2;
+			int botLength = 1;
+			int rightLength = 3;
+
+			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
+			Assert::AreEqual(15, result);
+			 
+			 
+			 
 		}
 	};
 }

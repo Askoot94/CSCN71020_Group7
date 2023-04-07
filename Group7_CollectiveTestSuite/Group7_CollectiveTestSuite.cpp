@@ -78,7 +78,8 @@ namespace Group7CollectiveTestSuite
 	{
 	public:
 
-		TEST_METHOD(TestMethod1)
+		//test for rectangle with all correct sides 
+		TEST_METHOD(Rectangle_Perimeter_1)
 		{
 			int result = 0;
 			int topLength = 2;
@@ -86,7 +87,7 @@ namespace Group7CollectiveTestSuite
 			int leftLength = 4;
 			int rightLength = 4;
 
-			result = GetRectanglePerimeter(topLength, botLength, leftLength,rightLength);
+			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
 			Assert::AreEqual(12, result);
 		}
 
@@ -117,6 +118,12 @@ namespace Group7CollectiveTestSuite
 		}
 	};
 	//Sorry Git, but if your Tests didn't get commented out Then it'll stop the other tests from performing
+	// 
+	// *********************************************************************************************************************
+	// Unit test on getRectangleSides function isn't running because the compiler is waiting for a user input 
+	//  which, therefore stops other test units.
+	// *********************************************************************************************************************
+	// 
 	//TEST_CLASS(GiteshTestSuite)
 	//{
 	//public:
@@ -164,7 +171,7 @@ namespace Group7CollectiveTestSuite
 	TEST_CLASS(DonalDTestSuite)
 	{
 	public:
-
+		// created a test case for don1 and its successfully running
 		TEST_METHOD(don1)
 		{
 			char* expected = "Scalene triangle";
@@ -172,31 +179,66 @@ namespace Group7CollectiveTestSuite
 			int side2 = 3;
 			int side3 = 1;
 
-			char* result = analyzeTriangle( side1, side2, side3);
-			Assert::AreEqual(expected, result);
-			
-		}
-		TEST_METHOD(don2)
-		{
-			char* expected = "isosceles traingle";
-			int side2 = 2;
-			int side1 = 2;
-			int side3 = 1;
-
 			char* result = analyzeTriangle(side1, side2, side3);
 			Assert::AreEqual(expected, result);
 
-
-
-
-
-
-
 		}
+		// created a test case for don2 and its successfully running
+		TEST_METHOD(don2)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 3;
 
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+		}
+		// created a test case for don3 and its successfully running
+		TEST_METHOD(don3)
+		{
+			char* expected = "Equilateral triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 2;
 
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+		}
+		// created a fail test case for don4 and its successfully running
+		TEST_METHOD(don4)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 3;
+			int side3 = 4;
 
-
-
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreNotEqual(expected, result);
+		}
+		
 	};
 }
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+		
+
+
+
+
+
+	
+

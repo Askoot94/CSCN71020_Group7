@@ -118,6 +118,12 @@ namespace Group7CollectiveTestSuite
 		}
 	};
 	//Sorry Git, but if your Tests didn't get commented out Then it'll stop the other tests from performing
+	// 
+	// *********************************************************************************************************************
+	// Unit test on getRectangleSides function isn't running because the compiler is waiting for a user input 
+	//  which, therefore stops other test units.
+	// *********************************************************************************************************************
+	// 
 	//TEST_CLASS(GiteshTestSuite)
 	//{
 	//public:

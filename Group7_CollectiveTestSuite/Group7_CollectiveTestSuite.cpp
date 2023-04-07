@@ -110,13 +110,13 @@ namespace Group7CollectiveTestSuite
 		TEST_METHOD(getRectangleSides_Functionality)
 		{
 			int rectangleSides[4] = { 1, 6, 4, 0 };
-			int expectedRectangleSides[4] = { 1, 6, 4, 0 };
+			int expectedRectangleSides[4] = { 1, 5, 4, 0 };
 
-			getRectangleSides(rectangleSides); // Call the function
+			getRectangleSides(&rectangleSides[4]);                                   //Call the function
 
 			for (int i = 0; i < 4; i++)
 			{
-				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]); // Compare individual elements
+				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]);      //Compare individual elements
 			}
 		}
 	};

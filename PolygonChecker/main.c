@@ -117,5 +117,6 @@ void getRectangleSides(int* rectangleSides)
     *(rectangleSides + 1) = botLength;
     *(rectangleSides + 2) = leftLength;
     *(rectangleSides + 3) = rightLength;
+ 
 }
     //Use the rectangle points to determine the sides.

@@ -8,6 +8,7 @@ extern "C" char* analyzeRectangle(int[]);
 extern "C" void getRectangleSides(int*);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
+extern "C" int GetRectangleArea(int, int);
 
 
 namespace Group7CollectiveTestSuite

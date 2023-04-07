@@ -1,19 +1,15 @@
 #include "pch.h"
 #include "CppUnitTest.h"
+using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" int GetRectanglePerimeter(int topLength, int botLength, int leftLength, int rightLength);
-extern "C" char* analyzeRectangle(int*, int*, int[]);
-extern "C" char GetUserNumber();
-
-extern "C" void getRectangleSides(int rectangleSides[]);
-
-using namespace Microsoft::VisualStudio::CppUnitTestFramework;
-
-
-
+extern "C" char* analyzeRectangle(int[]);
+extern "C" void getRectangleSides(int*);
 extern "C" char* analyzeTriangle(int side1, int side2, int side3);
 extern "C" double* getTriangleAngles(int* triangleSides, double* triangleAngles);
+
+
 namespace Group7CollectiveTestSuite
 {
 	TEST_CLASS(RianTestSuite)
@@ -23,27 +19,24 @@ namespace Group7CollectiveTestSuite
 		{
 			//Checking the Function can Identify Squares
 			char* expected = "\nSquare\n\n";
-			int xValue[4] = { 0,4,0,4 };
-			int yValue[4] = { 4,4,0,0 };
-			char* result = analyzeRectangle(xValue, yValue, NULL);
+			int SideLengths[4] = { 4, 4, 4, 4 };
+			char* result = analyzeRectangle(SideLengths);
 			Assert::AreEqual(expected, result);
 		}
 		TEST_METHOD(ShapeIdentification2)
 		{
 			//Checking the Function can Identify Rectangles
 			char* expected = "\nRectangle\n\n";
-			int xValue[4] = { 0,4,0,4 };
-			int yValue[4] = { 3,3,0,0 };
-			char* result = analyzeRectangle(xValue, yValue, NULL);
+			int SideLengths[4] = { 4, 4, 2, 2 };
+			char* result = analyzeRectangle(SideLengths);
 			Assert::AreEqual(expected, result);
 		}
 		TEST_METHOD(ShapeIdentification3)
 		{
 			//Checking the Function can Identify  given points is not a Rectangle or Square
 			char* expected = "Not a Rectangle";
-			int xValue[4] = { 0,4,0,4 };
-			int yValue[4] = { 3,3,1,0 };
-			char* result = analyzeRectangle(xValue, yValue, NULL);
+			int SideLengths[4] = { 4, 1, 3, 4 };
+			char* result = analyzeRectangle(SideLengths);
 			Assert::AreEqual(expected, result);
 		}
 	};
@@ -53,20 +46,39 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
+			int triangleSides[3] = { 5, 5, 5 };
+			double triangleAngles[3];
+			getTriangleAngles(triangleSides, triangleAngles);
+			Assert::AreNotEqual(66.00, triangleAngles[0]);
+			Assert::AreNotEqual(90.00, triangleAngles[1]);
+			Assert::AreNotEqual(85.00, triangleAngles[2]);
+		}
+		TEST_METHOD(Triangle_Angle_2)
+		{
+
 			int triangleSides[3] = { 3, 4, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
-			Assert::AreEqual(90.0, triangleAngles[0], 1e-6);
-			Assert::AreEqual(36.8699, triangleAngles[1], 1e-4);
-			Assert::AreEqual(53.1301, triangleAngles[2], 1e-4);
-
-
+		
+	        Assert::AreEqual(36.869897645844013, triangleAngles[0]);
+			Assert::AreEqual(53.130102354155980, triangleAngles[1]);
+			Assert::AreEqual(90.0000, triangleAngles[2]);
+		}
+		TEST_METHOD(Triangle_Angle_3)
+		{
+			int triangleSides[3] = { 1 ,2 , 1 };
+			double triangleAngles[3];
+			getTriangleAngles(triangleSides, triangleAngles);
+			Assert::AreNotEqual(35.00, triangleAngles[0]);
+			Assert::AreNotEqual(70.00, triangleAngles[1]);
+			Assert::AreNotEqual(75.00, triangleAngles[2]);
 		}
 	};
 	TEST_CLASS(JoelTestSuite)
 	{
 	public:
 
+		//test for rectangle with all correct sides 
 		TEST_METHOD(Rectangle_Perimeter_1)
 		{
 			int result = 0;
@@ -75,10 +87,11 @@ namespace Group7CollectiveTestSuite
 			int leftLength = 4;
 			int rightLength = 4;
 
-			result = GetRectanglePerimeter(topLength, botLength, leftLength,rightLength);
+			result = GetRectanglePerimeter(topLength, botLength, leftLength, rightLength);
 			Assert::AreEqual(12, result);
 		}
 
+		//test for rectangle with wrong sides
 		TEST_METHOD(Rectangle_Perimeter_2)
 		{
 			int result = 0;
@@ -91,6 +104,7 @@ namespace Group7CollectiveTestSuite
 			Assert::AreEqual(13, result);
 		}
 
+		//test for rectangle with correct side but with wrong result
 		TEST_METHOD(Rectangle_Perimeter_3)
 		{
 			int result = 0;
@@ -103,39 +117,104 @@ namespace Group7CollectiveTestSuite
 			Assert::AreNotEqual(12, result);
 		}
 	};
-	TEST_CLASS(GiteshTestSuite)
-	{
-	public:
+	//Sorry Git, but if your Tests didn't get commented out Then it'll stop the other tests from performing
+	//TEST_CLASS(GiteshTestSuite)
+	//{
+	//public:
 
-		TEST_METHOD(getRectangleSides_Functionality)
-		{
-			int rectangleSides[4] = { 1, 6, 4, 0 };
-			int expectedRectangleSides[4] = { 1, 5, 4, 0 };
+	//	TEST_METHOD(getRectangleSides_Functionality)
+	//	{
+	//		int rectangleSides[4] = { 1, 6, 4, 0 };
+	//		int expectedRectangleSides[4] = { 1, 6, 4, 0 };
 
-			getRectangleSides(&rectangleSides[4]);                                   //Call the function
+	//		getRectangleSides(rectangleSides); // Call the function
 
-			for (int i = 0; i < 4; i++)
-			{
-				Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]);      //Compare individual elements
-			}
-		}
-	};
+	//		for (int i = 0; i < 4; i++)
+	//		{
+	//			Assert::AreEqual(rectangleSides[i], expectedRectangleSides[i]); // Compare individual elements
+	//		}
+	//	}
+	//};
 	TEST_CLASS(JayTestSuite)
 	{
 	public:
 
 		TEST_METHOD(TestMethod1)
 		{
-         
+
 		}
 	};
-	TEST_CLASS(DonalTestSuite)
+	TEST_CLASS(DonalDTestSuite)
 	{
 	public:
-
-		TEST_METHOD(don)
+		// created a test case for don1 and its successfully running
+		TEST_METHOD(don1)
 		{
-		
+			char* expected = "Scalene triangle";
+			int side1 = 2;
+			int side2 = 3;
+			int side3 = 1;
+
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+
 		}
+		// created a test case for don2 and its successfully running
+		TEST_METHOD(don2)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 3;
+
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+		}
+		// created a test case for don3 and its successfully running
+		TEST_METHOD(don3)
+		{
+			char* expected = "Equilateral triangle";
+			int side1 = 2;
+			int side2 = 2;
+			int side3 = 2;
+
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreEqual(expected, result);
+		}
+		// created a fail test case for don4 and its successfully running
+		TEST_METHOD(don4)
+		{
+			char* expected = "Isosceles triangle";
+			int side1 = 2;
+			int side2 = 3;
+			int side3 = 4;
+
+			char* result = analyzeTriangle(side1, side2, side3);
+			Assert::AreNotEqual(expected, result);
+		}
+		
 	};
 }
+
+
+
+
+
+
+
+			
+
+
+
+
+
+
+
+		
+
+
+
+
+
+	
+

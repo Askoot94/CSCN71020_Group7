@@ -101,6 +101,7 @@
       <SubSystem>Windows</SubSystem>
       <AdditionalLibraryDirectories>D:\College Files\CSCN71020\Group Project\Askoot94\CSCN71020_Group7\PolygonChecker\x64\Debug;C:\Users\gites\source\repos\CSCN71020_Group7\PolygonChecker\x64\Debug;$(VCInstallDir)UnitTest\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalLibraryDirectories>C:\Users\adeyi\Downloads\CSCN71020_Group7.zip\CSCN71020_Group7\PolygonChecker\x64\Debug;$(VCInstallDir)UnitTest\lib;D:\College Files\CSCN71020\Group Project\Askoot94\CSCN71020_Group7\PolygonChecker\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>E:\Conestoga\71020-Software Implementation\Group Assignment\Assignment 1\PolygonChecker\x64\Debug;C:\Users\Donald\source\repos\Askoot94\CSCN71020_Group7\PolygonChecker\x64\Debug;C:\Users\Donald\source\repos\Askoot94\CSCN71020_Group7;C:\Users\adeyi\source\repos\CSCN71020_Group7\PolygonChecker\x64\Debug;$(VCInstallDir)UnitTest\lib;D:\College Files\CSCN71020\Group Project\Askoot94\CSCN71020_Group7\PolygonChecker\x64\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>main.obj;GetTriangleAngle.obj;rectangleSolver.obj;triangleSolver.obj;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>

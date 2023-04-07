@@ -29,7 +29,7 @@ int main(){
         case '2':
             printf_s("Rectangle Selected.\n");
             int RectangleSides[4] = { 0,0,0,0 };
-            getRectangleSides(&RectangleSides);
+            getRectangleSides(RectangleSides);
             printf("%s", analyzeRectangle(RectangleSides)); //Will print rectangle type
             break;
         case '0':

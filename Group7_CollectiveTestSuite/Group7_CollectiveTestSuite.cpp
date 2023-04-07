@@ -201,26 +201,3 @@ namespace Group7CollectiveTestSuite
 		
 	};
 }
-
-
-
-
-
-
-
-			
-
-
-
-
-
-
-
-		
-
-
-
-
-
-	
-

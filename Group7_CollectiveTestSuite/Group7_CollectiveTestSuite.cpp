@@ -163,11 +163,6 @@ namespace Group7CollectiveTestSuite
 			int result2 = GetRectangleArea(topLength, rightLength);
 			Assert::AreEqual(35, result2);
 		}
-
-		TEST_METHOD(Rectangle_Area_3)
-		{
-
-		}
 	};
 	TEST_CLASS(DonalDTestSuite)
 	{

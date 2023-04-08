@@ -166,6 +166,8 @@ namespace Group7CollectiveTestSuite
 			int result2 = GetRectangleArea(topLength, rightLength);
 			Assert::AreEqual(35, result2);
 		}
+		//Test to calculate the area of a toplength and right length of a rectangle ,which is successful.
+		//test to calculate the area of a toplenth and leftlength of a tringle which failed .
 	};
 	TEST_CLASS(DonalDTestSuite)
 	{

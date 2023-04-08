@@ -47,6 +47,7 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
+
 			//Checking if the function identifies if the angles provided by user are wrong 
 			int triangleSides[3] = { 5, 5, 5 };
 			double triangleAngles[3];

@@ -47,6 +47,8 @@ namespace Group7CollectiveTestSuite
 
 		TEST_METHOD(Triangle_Angle_1)
 		{
+
+			//Checking if the function identifies if the angles provided by user are wrong 
 			int triangleSides[3] = { 5, 5, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
@@ -56,7 +58,7 @@ namespace Group7CollectiveTestSuite
 		}
 		TEST_METHOD(Triangle_Angle_2)
 		{
-
+			//Checking if the function correctly calculates the angles of the triangle
 			int triangleSides[3] = { 3, 4, 5 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
@@ -67,6 +69,7 @@ namespace Group7CollectiveTestSuite
 		}
 		TEST_METHOD(Triangle_Angle_3)
 		{
+			//Checking if the function identifies if the angles provided by user are wrong 
 			int triangleSides[3] = { 1 ,2 , 1 };
 			double triangleAngles[3];
 			getTriangleAngles(triangleSides, triangleAngles);
@@ -145,7 +148,7 @@ namespace Group7CollectiveTestSuite
 	TEST_CLASS(JayTestSuite)
 	{
 	public:
-
+		// testing if get rectangle area works correctly
 		TEST_METHOD(Rectangle_area1)
 		{
 			int topLength = 2;
@@ -154,6 +157,7 @@ namespace Group7CollectiveTestSuite
 			int result1 = GetRectangleArea(topLength, leftLength);
 			Assert::AreEqual(8, result1);
 		}
+		// testing if get rectangle area function identifies if area was wrongly calculated by inputing a wrong area
 		TEST_METHOD(Rectangle_Area_2)
 		{
 			
@@ -163,6 +167,8 @@ namespace Group7CollectiveTestSuite
 			int result2 = GetRectangleArea(topLength, rightLength);
 			Assert::AreEqual(35, result2);
 		}
+		//Test to calculate the area of a toplength and right length of a rectangle ,which is successful.
+		//test to calculate the area of a toplenth and leftlength of a tringle which failed .
 	};
 	TEST_CLASS(DonalDTestSuite)
 	{
